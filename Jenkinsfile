@@ -23,7 +23,7 @@ pipeline{
         stage('reporting'){
             steps{
                 //archiveArtifacts artifacts: '**/targets/gameoflife.war'
-                junit testResults: '/gol-declarative/gameoflife-web/target/surefire-reports/TEST-*.xml'
+                junit testResults: '/gol-declarative/gameoflife-web/target/surefire-reports/TEST-behavior.CountingThings.xml'
             }
         }
     }
