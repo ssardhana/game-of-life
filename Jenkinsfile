@@ -20,11 +20,11 @@ pipeline{
                 sh script: 'mvn package'        
             }
         }
-        // stage('reporting'){
-        //     steps{
-        //         archiveArtifacts artifacts: '**/targets/gameoflife.war'
-        //         //junit testResults: '**/targets/surefire-reports/TEST-*.xml'
-        //     }
-        // }
+        stage('reporting'){
+            steps{
+                //archiveArtifacts artifacts: '**/targets/gameoflife.war'
+                junit testResults: '/gol-declarative/gameoflife-web/target/surefire-reports/TEST-*.xml'
+            }
+        }
     }
 }
